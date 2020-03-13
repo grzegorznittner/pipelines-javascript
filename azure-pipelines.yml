@@ -19,3 +19,17 @@ steps:
     npm install
     npm run build
   displayName: 'npm install and build'
+
+variables: 
+    ## Add this under variables section in the pipeline
+    azureSubscription: Płatność zgodnie z rzeczywistym użyciem
+    appName: gregtest1
+
+## Add the below snippet at the end of your pipeline
+- task: AzureWebApp@1
+  displayName: 'Azure Web App Deploy'
+  inputs:
+    azureSubscription: $(azureSubscription)
+    appType: webAppLinux
+    appName: $(appName)
+    package: $(System.ArtifactsDirectory)/**/*.zip
