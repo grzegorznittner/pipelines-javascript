@@ -6,6 +6,11 @@
 trigger:
 - master
 
+variables: 
+    ## Add this under variables section in the pipeline
+    azureSubscription: 'Płatność zgodnie z rzeczywistym użyciem'
+    appName: gregtest1
+
 pool:
   vmImage: 'ubuntu-16.04'
 
@@ -19,11 +24,6 @@ steps:
     npm install
     npm run build
   displayName: 'npm install and build'
-
-variables: 
-    ## Add this under variables section in the pipeline
-    azureSubscription: Płatność zgodnie z rzeczywistym użyciem
-    appName: gregtest1
 
 ## Add the below snippet at the end of your pipeline
 - task: AzureWebApp@1
