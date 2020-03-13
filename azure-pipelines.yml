@@ -6,11 +6,6 @@
 trigger:
 - master
 
-variables: 
-    ## Add this under variables section in the pipeline
-    azureSubscription: '3dfe4218-4b98-4cce-8e2d-4dcdaa6fbd4a'
-    appName: gregtest1
-
 pool:
   vmImage: 'ubuntu-16.04'
 
